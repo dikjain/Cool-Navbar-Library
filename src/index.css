@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer utilities {
+  /* Existing grid patterns */
+  .bg-grid-white {
+    background-size: 40px 40px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  }
+
+  /* New animations and patterns */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .clip-path-morphing {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    animation: morph 8s ease-in-out infinite;
+  }
+
+  .circuit-pattern {
+    background-image: 
+      radial-gradient(circle at 50% 50%, rgba(76, 175, 80, 0.1) 2px, transparent 2px),
+      linear-gradient(0deg, transparent 49%, rgba(76, 175, 80, 0.1) 50%, transparent 51%);
+    background-size: 30px 30px, 100% 30px;
+    animation: circuit 2s linear infinite;
+  }
+
+  .retro-grid-pattern {
+    background-image: 
+      linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, 0.05) 25%, rgba(255, 255, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 0.05) 75%, rgba(255, 255, 255, 0.05) 76%, transparent 77%, transparent),
+      linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, 0.05) 25%, rgba(255, 255, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 0.05) 75%, rgba(255, 255, 255, 0.05) 76%, transparent 77%, transparent);
+    background-size: 50px 50px;
+  }
+
+  .glitch-effect {
+    position: relative;
+  }
+
+  .glitch-effect::before,
+  .glitch-effect::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: inherit;
+    opacity: 0.5;
+  }
+
+  .glitch-effect::before {
+    animation: glitch-1 2s infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  }
+
+  .glitch-effect::after {
+    animation: glitch-2 2s infinite;
+    clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+  }
+
+  .clip-path-hexagon {
+    clip-path: polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
+  }
+
+  .aurora-effect {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .aurora-effect::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, transparent 25%, rgba(255,255,255,0.1) 50%, transparent 75%);
+    background-size: 200% 200%;
+    animation: aurora 3s linear infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes morph {
+  0%, 100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+  50% { clip-path: polygon(5% 0%, 95% 0%, 100% 100%, 0% 100%); }
+}
+
+@keyframes circuit {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 30px; }
+}
+
+@keyframes glitch-1 {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-5px, 5px); }
+  40% { transform: translate(-5px, -5px); }
+  60% { transform: translate(5px, 5px); }
+}
+
+@keyframes glitch-2 {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(5px, -5px); }
+  40% { transform: translate(5px, 5px); }
+  60% { transform: translate(-5px, -5px); }
+}
+
+@keyframes aurora {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 200% 200%; }
+}
+
+@keyframes wave {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+
+
+
+  .neon-text {
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff;
+  }
+
+  .before\:bg-grid-small-cyan\/20 {
+    background-image: linear-gradient(to right, rgba(0, 255, 255, 0.2) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 255, 255, 0.2) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  @keyframes gridMove {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 20px 20px;
+    }
+  }
+
+  .before\:animate-gridMove {
+    animation: gridMove 5s linear infinite;
+  }
+
+
+  html{
+    scroll-behavior: smooth;
+  }
