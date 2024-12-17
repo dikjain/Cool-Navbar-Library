@@ -1,7 +1,5 @@
-import React from 'react';
 import { cn } from '@/lib/utils';
 import { NavbarProps } from '../types';
-import { PrinterIcon } from 'lucide-react';
 
 export function CyberNavbar({ className, logo, children }: NavbarProps) {
 

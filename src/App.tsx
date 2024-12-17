@@ -1,4 +1,3 @@
-import React from 'react';
 import { FloatingNavbar } from '@/components/navbar/variants/FloatingNavbar';
 import { MorphingNavbar } from '@/components/navbar/variants/MorphingNavbar';
 import { GradientBorderNavbar } from '@/components/navbar/variants/GradientBorderNavbar';
@@ -10,7 +9,7 @@ import { GlitchNavbar } from '@/components/navbar/variants/GlitchNavbar';
 import { HexagonNavbar } from '@/components/navbar/variants/HexagonNavbar';
 import { AuroraNavbar } from '@/components/navbar/variants/AuroraNavbar';
 import { Button } from '@/components/ui/button';
-import { Code, Github, Zap } from 'lucide-react';
+import {  Github, Zap } from 'lucide-react';
 import { FuturisticNavbar } from '@/components/navbar/variants/FutursticNavbar';
 function App() {
   const navLinks = (
